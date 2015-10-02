@@ -23,5 +23,25 @@ namespace Testrename
             Fichier fileCurrent = C;
             Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
         }
+        [TestMethod]
+        public void Testrename1_2()
+        {
+            //test rename 1.2
+            Repertoire C = new Repertoire("C:", null);
+            Fichier fileCurrent = C;
+            fileCurrent.chmod("7");
+            fileCurrent.mkdir("toto");
+            Assert.IsFalse(fileCurrent.renameTo("toto", "toto"));
+        }
+        [TestMethod]
+        public void Testrename1_3()
+        {
+            //test rename 1.3
+            Repertoire C = new Repertoire("C:", null);
+            Fichier fileCurrent = C;
+            fileCurrent.chmod("7");
+            fileCurrent.createNewFile("toto");
+            Assert.IsFalse(fileCurrent.renameTo("toto", "toto"));
+        }
     }
 }
