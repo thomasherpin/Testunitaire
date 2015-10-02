@@ -8,7 +8,7 @@ namespace TestUnitaireFileSystem1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testparent1()
         {
             //test parent 1
             Repertoire C = new Repertoire("C:", null);

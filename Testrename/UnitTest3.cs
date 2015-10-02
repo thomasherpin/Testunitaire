@@ -5,46 +5,50 @@ using FileSystem;
 namespace Testrename
 {
     [TestClass]
-    public class UnitTest2
+    public class UnitTest3
     {
         [TestMethod]
-        public void Testrename2()
+        public void Testrename3()
         {
-            //test rename 2
+            //test rename 3
             Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
             fileCurrent.chmod("7");
             fileCurrent.mkdir("toto");
-            Assert.IsTrue(fileCurrent.renameTo("toto", "tata"));
-        }
-        [TestMethod]
-        public void Testrename2_1()
-        {
-            //test rename 2.1
-            Fichier C = new Fichier("C:", null);
-            Fichier fileCurrent = C;
-            fileCurrent.chmod("7");
-            fileCurrent.mkdir("toto");//le répertoire ne se créé pas (dans un fichier)
+            fileCurrent.mkdir("tata");
             Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
         }
         [TestMethod]
-        public void Testrename2_3()
+        public void Testrename3_1()
         {
-            //test rename 2.3
+            //test rename 3.1
+            Repertoire C = new Repertoire("C:", null);
+            Fichier fileCurrent = C;
+            fileCurrent.chmod("7");
+            fileCurrent.mkdir("toto");
+            fileCurrent.createNewFile("tata");
+            Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
+        }
+        [TestMethod]
+        public void Testrename3_2()
+        {
+            //test rename 3.2
             Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
             fileCurrent.chmod("7");
             fileCurrent.createNewFile("toto");
-            Assert.IsTrue(fileCurrent.renameTo("toto", "tata"));
+            fileCurrent.mkdir("tata");
+            Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
         }
         [TestMethod]
-        public void Testrename2_4()
+        public void Testrename3_3()
         {
-            //test rename 2.4
-            Fichier C = new Fichier("C:", null);
+            //test rename 3.3
+            Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
             fileCurrent.chmod("7");
-            fileCurrent.createNewFile("toto");//le fichier ne se créé pas (dans un fichier)
+            fileCurrent.createNewFile("toto");
+            fileCurrent.createNewFile("tata");
             Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
         }
     }

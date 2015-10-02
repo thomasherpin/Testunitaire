@@ -8,13 +8,13 @@ namespace TestUnitaireFileSystem7
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testdelete1()
         {
             //test delete 1
             Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
             fileCurrent.chmod("7");
-            Assert.IsFalse(fileCurrent.delete("C:"));
+            Assert.IsFalse(fileCurrent.delete("toto"));
         }
     }
 }

@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{150F48E2-F943-4480-A805-F3AE64487143}</ProjectGuid>
+    <ProjectGuid>{0DFD3E73-977B-417A-8F8B-6DDF355D55D1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TestUnitaireFileSystem1</RootNamespace>
-    <AssemblyName>TestUnitaireFileSystem1</AssemblyName>
+    <RootNamespace>Testls</RootNamespace>
+    <AssemblyName>Testls</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitTest2.cs" />
     <Compile Include="UnitTest3.cs" />
+    <Compile Include="UnitTest4.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FileSystem\FileSystem.csproj">

@@ -43,13 +43,9 @@ namespace FileSystem
         {
             return false;
         }
-        //public void chmod(int Permission)
-        //{
-        //    this.Permission = Permission;
-        //}
         public virtual List<Fichier> ls()
         {
-            Console.WriteLine("Vous êtes dans le fichier: " + this.Nom + "Il n'y a pas de fichier(s) dans un fichier");
+            Console.WriteLine("Vous êtes dans le fichier: " + this.Nom + "\nIl n'y a pas de fichier(s) dans un fichier");
             return null;
         }
         public string getName()
@@ -77,7 +73,7 @@ namespace FileSystem
             //}
             //else
             //{
-            //    return false;  Console.WriteLine("Vous n\'avez pas les droits pour savoir si c'est un fichier (canRead => chmod 4/5/6/7)");x   
+            //    return null??;  Console.WriteLine("Vous n\'avez pas les droits pour savoir si c'est un fichier (canRead => chmod 4/5/6/7)");x   
             //}
         }
         public virtual bool isDirectory()
@@ -89,7 +85,7 @@ namespace FileSystem
             //}
             //else
             //{
-            //    return ??; Console.WriteLine("Vous n\'avez pas les droits pour savoir si c'est un fichier (canRead => chmod 4/5/6/7)");
+            //    return null??; Console.WriteLine("Vous n\'avez pas les droits pour savoir si c'est un fichier (canRead => chmod 4/5/6/7)");
             //}
         }
         public string getPath()
@@ -142,7 +138,7 @@ namespace FileSystem
 
         public virtual Fichier cd(string Nom)
         {
-            return null;
+            return this;
         }
         public bool chmod(string Permission)
         {

@@ -8,12 +8,13 @@ namespace Testcd
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testcd1()
         {
             //test cd 1
             Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
-            Assert.AreEqual(C, fileCurrent.cd("toto"));
+            fileCurrent = fileCurrent.cd("toto");
+            Assert.AreEqual(C, fileCurrent);
         }
     }
 }

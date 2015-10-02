@@ -8,13 +8,27 @@ namespace Testchmod
     public class UnitTest3
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testchmod3()
         {
             //test chmod 3 (chiffre)
             Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
             Assert.IsFalse(fileCurrent.chmod("0"));
+        }
+        [TestMethod]
+        public void Testchmod4()
+        {
+            //test chmod 3 (chiffre)
+            Repertoire C = new Repertoire("C:", null);
+            Fichier fileCurrent = C;
             Assert.IsFalse(fileCurrent.chmod("8"));
+        }
+        [TestMethod]
+        public void Testchmod5()
+        {
+            //test chmod 3 (chiffre)
+            Repertoire C = new Repertoire("C:", null);
+            Fichier fileCurrent = C;
             Assert.IsFalse(fileCurrent.chmod("-1"));
         }
     }

@@ -9,7 +9,7 @@ namespace FileSystem
     public class Repertoire : Fichier
     {
 
-        List<Fichier> fichieR = new List<Fichier>();
+        public List<Fichier> fichieR = new List<Fichier>();
 
         public Repertoire(String Nom, Repertoire parent): base (Nom, parent)
         {
@@ -40,7 +40,7 @@ namespace FileSystem
                     {
                         Console.WriteLine(item.Nom + " (" + item.GetType() + ") " + item.Permission);
                     }
-                    return null;
+                    return fichieR;
             }
             else
             {
@@ -164,53 +164,62 @@ namespace FileSystem
             else
             {
                 //Console.WriteLine("Vous n\'avez pas les droits pour rentrer dans un fichier à partir de celui-ci (canRead => chmod 4/5/6/7)");
-                return null;
+                return this;
             }
         }
         public override List<Fichier> search(string name)
         {
+            List<Fichier> fichiersearch = new List<Fichier>();
             if (this.canRead())
             {
-                foreach (Fichier fichier in this.fichieR)
+                for (int i = 0; i < fichieR.Count(); i++)
                 {
-                        List<Fichier> fichiersearch = new List<Fichier>();
-                        for (int i = 0; i < fichieR.Count(); i++)
-                        {
-                            if (fichieR[i].Nom == name)
-                            {
-                                fichiersearch.Add(fichieR[i]);
-                            }
-                            //Si c'est un répertoire, on rappel la fonction pour rechercher dans les fichiers de celui-ci.
-                            if (fichieR[i].isDirectory() == true)
-                            {
-                                fichiersearch.AddRange(fichieR[i].search(name));
-                            }
-                        }
-                        //Console.WriteLine("Nom du fichier recherché: " + fichier.Nom + "\nChemin: " + fichier.getPath());
-                        return fichiersearch;
+                    if (fichieR[i].Nom == name)
+                    {
+                        fichiersearch.Add(fichieR[i]);
+                        Console.WriteLine("Nom du fichier recherché: " + fichieR[i].Nom + "\nChemin: " + fichieR[i].getPath());
+                    }
+                    //Si c'est un répertoire, on rappel la fonction pour rechercher dans les fichiers de celui-ci.
+                    if (fichieR[i].isDirectory() == true)
+                    {
+                        fichiersearch.AddRange(fichieR[i].search(name));
+                    }
                 }
-                //Console.WriteLine("Vous n\'avez pas les droits pour lire à partir de ce fichier (canRead => chmod 4/5/6/7)");
-                return null;
+                return fichiersearch;
             }
             else
             {
-                //Console.WriteLine("Vous n\'avez pas les droits pour lire à partir de ce fichier (canRead => chmod 4/5/6/7)");
-                return null;
+                Console.WriteLine("Pas les droits d'accès");
+                return fichiersearch;
             }
-            //List<Fichier> fichiersearch = new List<Fichier>();
-            //for (int i = 0; i < fichier.Count(); i++)
-            //{
-            //    if (fichier[i].Nom == name)
-            //    {
-            //        fichiersearch.Add(fichier[i]);
-            //    }
-            //    //Si c'est un répertoire, on rappel la fonction pour rechercher dans les fichiers de celui-ci.
-            //    if (fichier[i].isDirectory() == true)
-            //    {
-            //        fichiersearch.AddRange(fichier[i].search(name));
-            //    }
-            //}
-            //return fichiersearch;
         }
+        //if (this.canRead())
+        //{
+        //    foreach (Fichier fichier in this.fichieR)
+        //    {
+        //            List<Fichier> fichiersearch = new List<Fichier>();
+        //            for (int i = 0; i < fichieR.Count(); i++)
+        //            {
+        //                if (fichieR[i].Nom == name)
+        //                {
+        //                    fichiersearch.Add(fichieR[i]);
+        //                }
+        //                //Si c'est un répertoire, on rappel la fonction pour rechercher dans les fichiers de celui-ci.
+        //                if (fichieR[i].isDirectory() == true)
+        //                {
+        //                    fichiersearch.AddRange(fichieR[i].search(name));
+        //                }
+        //            }
+        //            //Console.WriteLine("Nom du fichier recherché: " + fichier.Nom + "\nChemin: " + fichier.getPath());
+        //            return fichiersearch;
+        //    }
+        //    //Console.WriteLine("Vous n\'avez pas les droits pour lire à partir de ce fichier (canRead => chmod 4/5/6/7)");
+        //    return null;
+        //}
+        //else
+        //{
+        //    //Console.WriteLine("Vous n\'avez pas les droits pour lire à partir de ce fichier (canRead => chmod 4/5/6/7)");
+        //    return null;
+        //}
     }
 }

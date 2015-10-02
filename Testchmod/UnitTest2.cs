@@ -8,7 +8,7 @@ namespace Testchmod
     public class UnitTest2
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testchmod2()
         {
             //test chmod 2 (lettre)
             Repertoire C = new Repertoire("C:", null);

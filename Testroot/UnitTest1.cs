@@ -8,7 +8,7 @@ namespace Testroot
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testroot1()
         {
             //test root 1
             Repertoire C = new Repertoire("C:", null);

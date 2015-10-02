@@ -8,12 +8,20 @@ namespace Testrename
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testrename1()
         {
             //test rename 1
             Repertoire C = new Repertoire("C:", null);
             Fichier fileCurrent = C;
-            Assert.IsFalse(fileCurrent.renameTo("C:", "C"));
+            Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
+        }
+        [TestMethod]
+        public void Testrename1_1()
+        {
+            //test rename 1.1, la même qu'au dessus pour un fichier
+            Fichier C = new Fichier("C:", null);
+            Fichier fileCurrent = C;
+            Assert.IsFalse(fileCurrent.renameTo("toto", "tata"));
         }
     }
 }

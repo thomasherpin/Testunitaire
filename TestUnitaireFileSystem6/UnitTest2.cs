@@ -8,7 +8,7 @@ namespace TestUnitaireFileSystem6
     public class UnitTest2
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testmkdir2()
         {
             //test mkdir 2
             Repertoire C = new Repertoire("C:", null);

@@ -2,18 +2,20 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FileSystem;
 
-namespace TestUnitaireFileSystem5
+namespace Testls
 {
     [TestClass]
     public class UnitTest2
     {
         [TestMethod]
-        public void Testcreate2()
+        public void Testls2()
         {
-            //test create 2
+            //test ls 2
             Repertoire C = new Repertoire("C:", null);
-            Fichier fileCurrent = C;
-            Assert.IsFalse(fileCurrent.createNewFile("C2"));
+            Fichier filecurrent = C;
+            filecurrent.chmod("7");
+            filecurrent.mkdir("toto");
+            Assert.AreEqual(1, C.ls().Count);
         }
     }
 }

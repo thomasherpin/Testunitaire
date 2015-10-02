@@ -8,7 +8,7 @@ namespace TestUnitaireFileSystem7
     public class UnitTest4
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testdelete4()
         {
             //test delete 4
             Repertoire C = new Repertoire("C:", null);

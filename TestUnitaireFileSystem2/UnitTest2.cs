@@ -8,13 +8,22 @@ namespace TestUnitaireFileSystem2
     public class UnitTest2
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testname2()
         {
             //test name 2
             Repertoire C = new Repertoire("C:", null);
-            Repertoire C2 = new Repertoire("C2", C);
-            Fichier fileCurrent = C2;
-            Assert.AreEqual(C2.Nom, fileCurrent.getName());
+            Fichier fileCurrent = C;
+            fileCurrent.chmod("1");
+            Assert.AreEqual(null, fileCurrent.getName());
+        }
+        [TestMethod]
+        public void Testname2_1()
+        {
+            //test name 2.1
+            Fichier C = new Fichier("C:", null);
+            Fichier fileCurrent = C;
+            fileCurrent.chmod("1");
+            Assert.AreEqual(null, fileCurrent.getName());
         }
     }
 }

@@ -8,11 +8,12 @@ namespace TestUnitaireFileSystem5
     public class UnitTest3
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Testcreate3()
         {
             //test create 3
             Fichier C = new Fichier("C:", null);
             Fichier fileCurrent = C;
+            Assert.IsFalse(fileCurrent.createNewFile("C2"));
             fileCurrent.chmod("7");
             Assert.IsFalse(fileCurrent.createNewFile("C2"));
         }
